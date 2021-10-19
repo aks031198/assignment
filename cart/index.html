@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Your Cart:</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <h1>___***Sample Store***___</h1>
+    <h3>Your Cart:</h3>
+
+    <div  id="shopping-cart">
+      <p class="cart"> loading </p>
+    </div>
+  </body>
+
+  <script>
+    console.log("hi");
+    var cart = JSON.parse(window.localStorage.getItem("cart"));
+    console.log(cart);
+    var text="your oder of "+cart[0]+" is ready";
+    console.log(text);
+    var msg="";
+    if(cart.length==0)
+    {
+    console.log("Uh-oh Ur Cart looks empty");
+    msg="Uh-oh Ur Cart looks empty";
+    }
+    if(cart.indexOf('i13'))
+    {
+      msg+="i13 "
+    }
+    if(cart.indexOf('i11'))
+    {
+      msg+="i11 "
+    }
+    if(cart.indexOf('s21g'))
+    {
+      msg+="S21 "
+    }
+    if(cart.indexOf('foldg'))
+    {
+      msg+="foldg "
+    }
+    var x=x=document.getElementById("shopping-cart");
+    x.querySelector(".cart").innerHTML=msg
+
+
+
+    console.log(msg);
+  
+  </script>
+
+  <html></html>
+</html>
