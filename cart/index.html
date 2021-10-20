@@ -6,49 +6,127 @@
 
   <body>
     <h1>___***Sample Store***___</h1>
-    <h3>Your Cart:</h3>
+    <a href="../index.html" style="float: right;">Go Back To Home Page</a>
 
+    <h3>Your Cart:</h3>
+    
     <div  id="shopping-cart">
-      <p class="cart"> loading//......... </p>
+      <article class="cart"> loading......... </article>
     </div>
+
+    <div id="total">
+      <p class="total" style="float:right; position: relative; right: 15px;"> Your total</p>
+    </div>
+    <br><br><br>
+    <div style="text-align: center; align-items: center">
+      <button  value="Submit" type="submit">Checkout</button>
+    </div>
+
+
   </body>
+  <footer>
+    <h2>Contact us:</h2>
+
+    <div class="footer-container">
+      <div style="color: blue" class="footer-item">
+        <a href="https://facebook.com"> Facebook </a>
+      </div>
+      <div style="color: skyblue" class="footer-item">
+        <a href="https://twitter.com"> Twitter </a>
+      </div>
+      <div style="color: purple" class="footer-item">
+        <a href="https://instagram.com"> Instagram </a>
+      </div>
+      <div style="color: darkturquoise" class="footer-item">
+        <a href="https://telegram.com"> Telegram </a>
+      </div>
+      <div style="color: red" class="footer-item">
+        <a href="https://gmail.com"> Gmail </a>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    console.log("hi");
     var cart = JSON.parse(window.localStorage.getItem("cart"));
     console.log(cart);
-    var text="your oder of "+cart[0]+" is ready";
-    console.log(text);
+    
     var msg="";
+    var total=0;
     if(cart.length==0)
     {
     console.log("Uh-oh Ur Cart looks empty");
     msg="Uh-oh Ur Cart looks empty";
     }
-    if(cart.indexOf('i13'))
+    console.log(cart.indexOf('s21'));
+    if(cart.indexOf('i13')>=0)
     {
-      msg+="i13 "
+      msg+=`<div class="flex-container-cart">
+        <div class="flex-item-cart">
+          <img src="../images/iphone_13.jpg" alt="iphone-13" width="200" height="200" />
+        </div>
+        <div id="i13" class="description">
+          <p style="font-size:40;">Iphone 13 </p>
+          <p class="price_cart">
+            Price=$799
+          </p>
+         </div>
+      </div>`;
+      total+=799;
     }
-    if(cart.indexOf('i11'))
+    if(cart.indexOf('i11')>=0)
     {
-      msg+="i11 "
+      msg+=`<div class="flex-container-cart">
+        <div class="flex-item-cart">
+          <img src="../images/iphone_11.jpg" alt="iphone-11" width="200" height="200" />
+        </div>
+        <div id="i11" class="description">
+          <p style="font-size:40;">Iphone 11 </p>
+          <p class="price_cart">
+            Price=$699
+          </p>
+         </div>
+      </div>`;
+      total+=699;
     }
-    if(cart.indexOf('s21g'))
+    if(cart.indexOf('s21g')>=0)
     {
-      msg+="S21 "
+      msg+=`<div class="flex-container-cart">
+        <div class="flex-item-cart">
+          <img src="../images/s21.jpg" alt="s21" width="200" height="200" />
+        </div>
+        <div id="s21g" class="description">
+          <p style="font-size:40;">Samsung Galaxy s21 </p>
+          <p class="price_cart">
+            Price=$699
+          </p>
+         </div>
+      </div>`;
+      total+=699;
     }
-    if(cart.indexOf('foldg'))
+    if(cart.indexOf('foldg')>=0)
     {
-      msg+="foldg "
+      msg+=`<div class="flex-container-cart">
+        <div class="flex-item-cart">
+          <img src="../images/fold.jpg" alt="fold" width="200" height="200" />
+        </div>
+        <div id="foldg" class="description">
+          <p style="font-size:40;">Samsung Galaxy Fold </p>
+          <p class="price_cart">
+            Price=$1099
+          </p>
+         </div>
+      </div>`;
+      total+=1099;
     }
-    var x=x=document.getElementById("shopping-cart");
-    x.querySelector(".cart").innerHTML=msg
+    var x=document.getElementById("shopping-cart");
+    x.querySelector(".cart").innerHTML=msg;
+    console.log(total);
 
-
-
-    console.log(msg);
+    var y=document.getElementById("total");
+    sum="Your Total: $"+total;
+    y.querySelector(".total").innerHTML=sum;
   
   </script>
 
-  <html></html>
+ 
 </html>
