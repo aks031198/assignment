@@ -1,29 +1,32 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <title>Your Cart:</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
 
   <body>
     <h1>___***Sample Store***___</h1>
-    <a href="../index.html" style="float: right;">Go Back To Home Page</a>
+    <a href="../index.html" style="float: right">Go Back To Home Page</a>
 
     <h3>Your Cart:</h3>
-    
-    <div  id="shopping-cart">
-      <article class="cart"> loading......... </article>
+
+    <div id="shopping-cart">
+      <article class="cart">loading.........</article>
     </div>
 
     <div id="total">
-      <p class="total" style="float:right; position: relative; right: 15px;"> Your total</p>
+      <p class="total" style="float: right; position: relative; right: 15px">
+        Your total
+      </p>
     </div>
-    <br><br><br>
+    <br /><br /><br />
     <div style="text-align: center; align-items: center">
-      <button  value="Submit" type="submit">Checkout</button>
+      <button value="Submit" type="submit">Checkout</button>
     </div>
-
-
   </body>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
   <footer>
     <h2>Contact us:</h2>
 
@@ -47,86 +50,79 @@
   </footer>
 
   <script>
-    var cart = JSON.parse(window.localStorage.getItem("cart"));
+    let cart = JSON.parse(window.localStorage.getItem("cart"));
     console.log(cart);
-    
-    var msg="";
-    var total=0;
-    if(cart.length==0)
-    {
-    console.log("Uh-oh Ur Cart looks empty");
-    msg="Uh-oh Ur Cart looks empty";
+
+    let msg = "";
+    let total = 0;
+    if (cart.length == 0) {
+      console.log("Uh-oh Ur Cart looks empty");
+      msg = "Uh-oh Ur Cart looks empty";
     }
-    console.log(cart.indexOf('s21'));
-    if(cart.indexOf('i13')>=0)
-    {
-      msg+=`<div class="flex-container-cart">
+    console.log(cart.indexOf("foldg"));
+    if (cart.indexOf("i13") >= 0) {
+      msg += `<div class="flex-container-cart">
         <div class="flex-item-cart">
           <img src="../images/iphone_13.jpg" alt="iphone-13" width="200" height="200" />
         </div>
-        <div id="i13" class="description">
-          <p style="font-size:40;">Iphone 13 </p>
+        <div id="i13" class="description_cart">
+          <p class="checkout">Iphone 13 </p>
           <p class="price_cart">
             Price=$799
           </p>
          </div>
       </div>`;
-      total+=799;
+      total += 799;
     }
-    if(cart.indexOf('i11')>=0)
-    {
-      msg+=`<div class="flex-container-cart">
+    if (cart.indexOf("i11") >= 0) {
+      msg += `<div class="flex-container-cart">
         <div class="flex-item-cart">
           <img src="../images/iphone_11.jpg" alt="iphone-11" width="200" height="200" />
         </div>
-        <div id="i11" class="description">
-          <p style="font-size:40;">Iphone 11 </p>
+        <div id="i11" class="description_cart">
+          <p class="checkout">Iphone 11 </p>
           <p class="price_cart">
             Price=$699
           </p>
          </div>
       </div>`;
-      total+=699;
+      total += 699;
     }
-    if(cart.indexOf('s21g')>=0)
-    {
-      msg+=`<div class="flex-container-cart">
+    if (cart.indexOf("s21g") >= 0) {
+      msg += `<div class="flex-container-cart">
         <div class="flex-item-cart">
           <img src="../images/s21.jpg" alt="s21" width="200" height="200" />
         </div>
-        <div id="s21g" class="description">
-          <p style="font-size:40;">Samsung Galaxy s21 </p>
+        <div id="s21g" class="description_cart">
+          <p class="checkout">Samsung Galaxy s21 </p>
           <p class="price_cart">
             Price=$699
           </p>
          </div>
       </div>`;
-      total+=699;
+      total += 699;
     }
-    if(cart.indexOf('foldg')>=0)
-    {
-      msg+=`<div class="flex-container-cart">
+    if (cart.indexOf("foldg") >= 0) {
+      msg += `<div class="flex-container-cart">
         <div class="flex-item-cart">
           <img src="../images/fold.jpg" alt="fold" width="200" height="200" />
         </div>
-        <div id="foldg" class="description">
-          <p style="font-size:40;">Samsung Galaxy Fold </p>
+        <div id="foldg" class="description_cart">
+          <p class="checkout">Samsung Galaxy Fold </p>
           <p class="price_cart">
             Price=$1099
           </p>
          </div>
       </div>`;
-      total+=1099;
+      total += 1099;
     }
-    var x=document.getElementById("shopping-cart");
-    x.querySelector(".cart").innerHTML=msg;
+    let x = document.getElementById("shopping-cart");
+    x.querySelector(".cart").innerHTML = msg;
     console.log(total);
 
-    var y=document.getElementById("total");
-    sum="Your Total: $"+total;
-    y.querySelector(".total").innerHTML=sum;
-  
+    let y = document.getElementById("total");
+    sum = "Your Total: $" + total;
+    y.querySelector(".total").innerHTML = sum;
+    cart = null;
   </script>
-
- 
 </html>
