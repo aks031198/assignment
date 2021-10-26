@@ -162,6 +162,9 @@ h2 {
   height: 20px;
   width: 20px;
 }
+.btn:visited{
+  background-color: grey;
+}
 .checkout {
   font-size: 40;
 }
