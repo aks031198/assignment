@@ -9,6 +9,7 @@
     <h1>___***Sample Store***___</h1>
     <h2 class="title">About us-</h2>
     <h6 class="about">
+      <!-- Random Description -->
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Dignissim sodales ut
       eu sem. Feugiat sed lectus vestibulum mattis ullamcorper. Amet commodo
@@ -22,6 +23,7 @@
 
     <form action="cart/index.html" id="device" method="get">
       <article class="products"></article>
+      <!-- populated using js/cart.ts -->
     </form>
     <div style="text-align: center; align-items: center">
       <button form="device" value="Submit" type="submit">View Cart</button>
@@ -48,10 +50,16 @@
         </div>
       </div>
     </footer>
+    <script>
+      if (performance.navigation.type == 2) {
+        location.reload(true);
+      } // to reload page when pressed back button from browser
+    </script>
     <script src="js/products_browser.js"></script>
     <script>
       var cart = [];
       function added(id) {
+        // add to cart function
         var x = document.getElementById(id);
         var y = x.querySelector("input");
 
@@ -60,7 +68,7 @@
           cart.push(id);
           console.log(cart);
         } else if (
-          (!y.checked) &&
+          !y.checked &&
           x.querySelector(".cart").innerHTML == "Add to Cart"
         ) {
           x.querySelector(".cart").innerHTML = "Added to Cart";
@@ -72,7 +80,7 @@
           cart.splice(index, 1);
           console.log(cart);
         }
-        window.localStorage.setItem("cart", JSON.stringify(cart));
+        window.localStorage.setItem("cart", JSON.stringify(cart)); // setting local storage varible and passing to next page
       }
     </script>
   </body>

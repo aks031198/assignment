@@ -3,7 +3,6 @@ const p=JSON.stringify(data);
 const prod=JSON.parse(p);
 const l=prod["array"].length;
 let html="";
-console.log(prod["array"][1]["name"]);
 for(let i=0;i<l;i++)
 {
     html+=` <p class="product">${prod["array"][i]["name"]}</p>
@@ -15,7 +14,7 @@ for(let i=0;i<l;i++)
           width="400"
           height="300"
         />
-        <p class="price">${prod["array"][i]["price"]}</p>
+        <p class="price">Price=$${prod["array"][i]["price"]}</p>
       </div>
       <div id="${prod["array"][i]["id"]}" class="description">
         <p>
@@ -35,7 +34,6 @@ for(let i=0;i<l;i++)
 }
 var xz = document.getElementById("device");
 xz!.querySelector(".products")!.innerHTML=html;
-console.log("success");
 
 
 

@@ -13,7 +13,8 @@
     <h3>Your Cart:</h3>
 
     <div id="shopping-cart">
-      <article class="cart">loading.........</article>
+      <article class="cart">Loading.........</article>
+      <!-- populated using js/cart.ts-->
     </div>
 
     <div id="total">
@@ -50,4 +51,18 @@
   </footer>
 
   <script src="../js/cart_browser.js"></script>
+  <script>
+    function remove(id, prod_id) {
+      // to remove items from cart
+      let h = document.getElementById(id);
+      let cart = JSON.parse(window.localStorage.getItem("cart") || "{}");
+      console.log(cart);
+      let o = h.querySelector(".remove-item");
+      o.innerHTML = "";
+      let index = cart.indexOf(prod_id);
+      cart.splice(index, 1);
+      window.localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.reload();
+    }
+  </script>
 </html>

@@ -20,7 +20,7 @@ h2 {
   font-family: cursive;
   font-weight: bold;
   font-size: 30px;
-  background-color: khaki;
+  background-color: red;
   color: whitesmoke;
   text-align: center;
   margin-bottom: 1px;
@@ -303,5 +303,26 @@ a:hover {
     flex-grow: 0;
     position: relative;
     margin-bottom: 0px;
+  }
+  .btn-small {
+    position: absolute;
+    bottom: 0px;
+    background-color: darkred;
+    align-items: flex-end;
+    border: 1px solid #cacece;
+    border-radius: 8px;
+    color: white;
+    padding: 0px;
+    text-align: center;
+    text-decoration: wavy;
+    height: 20px;
+    width: 20px;
+  }
+  .cart-small{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    float:right;
+
   }
 }
